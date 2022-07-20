@@ -1,0 +1,100 @@
+/*-- scss:defaults --*/
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300,300i,400,400i,500,500i,700,700i);
+@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
+
+@import url(https://use.fontawesome.com/releases/v6.1.1/css/all.css);
+
+// fonts
+$font-family-sans-serif: 'Alegreya Sans', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', sans-serif !default;
+   
+// colors
+$body-bg: #333333 !default;
+$body-color: #FAFAFA !default;
+$link-color: $body-color !default;
+
+$code-bg: $body-color !default;
+$code-color: $body-bg !default;
+
+$code-block-bg: $body-color !default;
+$code-block-border-color: $body-color !default;
+
+/*-- scss:rules --*/
+
+.picture {
+  border-style: solid;
+  border-width: 3pt;
+  border-color: $body-color;
+  border-radius: 50%;
+  padding: 5pt;
+  height: 50%;
+  width: auto;
+}
+
+#title-slide {
+  text-align: left;
+}
+
+#title-slide .institute {
+  font-style: italic;
+  font-size: 80%;
+}
+
+#title-slide .author {
+  color: $body-color;
+}
+
+#title-slide p.author::before {
+  content: "";
+  display: block;
+  border: none;
+  background-color: $body-color;
+  color: $body-color;
+  height: 3px;
+  margin-bottom: 1em;
+}
+
+#title-slide p, #title-slide a {
+  color: #7F7F7F;
+}
+
+.footer {
+  bottom: 10px !important;
+  color: $body-color !important;
+}
+
+.slide-logo {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  right: 10px !important;
+  max-height: 15% !important;
+  height: 100% !important;
+  width: auto !important;
+  color: $body-color !important;
+}
+
+.slide-menu-button {
+  left: 10px !important;
+  bottom: 10px !important;
+}
+
+.slide-number, .reveal.has-logo .slide-number {
+  bottom: 10px !important;
+  right: 10px !important;
+  top: unset !important;
+  color: $body-color !important;
+}
+
+.cell-output {
+  border: 1px solid $body-color;
+  border-radius: 4px;
+}
+
+code.sourceCode > span {
+  color: $body-bg !important;
+}
+
+.center-x {
+  text-align: center;
+}

@@ -1,0 +1,15 @@
+title: Coeos Presentation Template
+author: Mickaël CANOUIL
+version: 1.0.0
+contributes:
+  formats:
+    revealjs:
+      slide-number: c
+      highlight-style: github
+      theme: coeos.scss
+      footer: |
+        <a href="https://mickael.canouil.fr/">mickael.canouil.fr</a>
+        |
+        <a href = "https://creativecommons.org/licenses/by-sa/4.0/">License: CC-BY-SA-4.0</a>
+      logo: https://raw.githubusercontent.com/mcanouil/hex-stickers/main/SVG/mc.svg
+      include-in-header: favicon.html

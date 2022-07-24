@@ -19,6 +19,8 @@ jobs:
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
+          GITHUB_USERNAME: ${{ github.actor }}
+          GITHUB_EMAIL: ${{ github.actor }}@users.noreply.github.com
           target: gh-pages
           path: template.qmd
         env:

@@ -42,7 +42,7 @@ jobs:
           quarto publish gh-pages index.qmd
           cd ..
           mkdir thumbs
-          Rscript -e "webshot2::webshot(url = \"index/index.html", file = paste0(file.path(\"thumbs\", basename("\${{ github.repository }}\")), \".png\"), vwidth = 1920, vheight = 1080)"
+          Rscript -e "webshot2::webshot(url = \"index/index.html", file = paste0(file.path(\"thumbs\", basename(\"${{ github.repository }}\")), \".png\"), vwidth = 1920, vheight = 1080)"
           rm -rf index
           git add thumbs/*.png
           git commit -m "ci: update thumbs" || echo "No changes to commit"

@@ -26,14 +26,14 @@ jobs:
 
       - name: Render and Publish
         run: |
-          mkdir ci-build
-          cd ci-build
+          mkdir index
+          cd index
           quarto use template --no-prompt ${{ github.repository }}
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git config --global user.name "${{ github.actor }}"
-          quarto publish gh-pages ci-build.qmd
+          quarto publish gh-pages index.qmd
           cd ..
-          rm -rf ci-build
+          rm -rf index
       - name: Render and Publish
         if: ${{ false }}
         uses: quarto-dev/quarto-actions/publish@v2

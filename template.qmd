@@ -6,14 +6,14 @@ institute: Inserm U1283 / CNRS UMR8199 / Institut Pasteur de Lille / Université
 date: today
 date-format: "dddd, [the] D[<sup style='font-size:65%;font-style:italic;'>th</sup>] [of] MMMM, YYYY"
 self-contained: true
-format:
-  coeos-revealjs: default
+format: coeos-revealjs
 ---
 
-```{r setup-ggplot2, include = FALSE}
+```{r}
+#| include: false
 sysfonts::font_add_google("Alegreya Sans", "Alegreya Sans", regular.wt = 300)
 showtext::showtext_auto()
-source("setup-ggplot2-coeos.R")
+source("_extensions/mcanouil/coeos/setup-ggplot2-coeos.R")
 ```
 
 ## Introduction
@@ -23,19 +23,22 @@ source("setup-ggplot2-coeos.R")
 `some code` and some text.  
 A URL [mickael.canouil.fr](https://mickael.canouil.fr/).
 
-```{r, echo = TRUE}
+```{r}
+#| echo: true
 1 + 1
 ```
 
-```{r, echo = TRUE}
+```{r}
+#| echo: true
 x <- 1
-y <- x + 1 #<<
+y <- x + 1
 y
 ```
 
 ## GGPLOT2 With `code`
 
-```{r, echo = FALSE}
+```{r}
+#| echo: true
 library(ggplot2)
 ggplot(mtcars, aes(wt, mpg)) + geom_point()
 ```
@@ -46,4 +49,4 @@ ggplot(mtcars, aes(wt, mpg)) + geom_point()
 
 With only text
 
-{{< include about.qmd >}}
+{{< include _extensions/mcanouil/coeos/about.qmd >}}

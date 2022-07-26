@@ -22,6 +22,7 @@ jobs:
             ggtext
             showtext
             knitr
+            webshot2
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
@@ -34,7 +35,12 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           quarto publish gh-pages index.qmd
           cd ..
+          mkdir thumbs
+          Rscript -e "webshot2::webshot(url = \"index/index.html", file = paste0(file.path(\"thumbs\", basename("\${{ github.repository }}\")), ".png"), vwidth = 1920, vheight = 1080)"
           rm -rf index
+          git add thumbs/*.png
+          git commit -m "ci: update thumbs" || echo "No changes to commit"
+          git push origin || echo "No changes to commit"  
       - name: Render and Publish
         if: ${{ false }}
         uses: quarto-dev/quarto-actions/publish@v2

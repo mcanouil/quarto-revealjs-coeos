@@ -3,6 +3,8 @@ author: Mickaël CANOUIL
 version: 1.0.0
 contributes:
   formats:
+    format-resources:
+      - setup-ggplot2-coeos.R
     revealjs:
       slide-number: c
       highlight-style: github

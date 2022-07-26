@@ -31,7 +31,7 @@ jobs:
           quarto use template --no-prompt ${{ github.repository }}
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git config --global user.name "${{ github.actor }}"
-          quarto publish gh-pages .
+          quarto publish gh-pages ci-build.qmd
           cd ..
           rm -rf ci-build
       - name: Render and Publish

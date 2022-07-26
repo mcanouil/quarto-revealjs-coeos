@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir ci-build
           cd ci-build
-          quarto use template mcanouil/quarto-revealjs-coeos
+          quarto use template --no-prompt mcanouil/quarto-revealjs-coeos
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git config --global user.name "${{ github.actor }}"
           quarto publish gh-pages template.qmd

@@ -11,7 +11,7 @@ This is a repository for `Quarto` `reveal.js` template.
 This [Quarto](quarto.org) extension can be installed/used using the following command:
 
 ```bash
-quarto use extension mcanouil/quarto-revealjs-coeos
+quarto use template mcanouil/quarto-revealjs-coeos
 ```
 
 ## Documentation

@@ -5,6 +5,7 @@ contributes:
   formats:
     format-resources:
       - setup-ggplot2-coeos.R
+      - about.qmd
     revealjs:
       slide-number: c
       highlight-style: github
@@ -13,5 +14,5 @@ contributes:
         <a href="https://mickael.canouil.fr/">mickael.canouil.fr</a>
         |
         <a href = "https://creativecommons.org/licenses/by-sa/4.0/">License: CC-BY-SA-4.0</a>
-      logo: https://raw.githubusercontent.com/mcanouil/hex-stickers/main/SVG/mc.svg
+      logo: coeos.svg
       include-in-header: favicon.html

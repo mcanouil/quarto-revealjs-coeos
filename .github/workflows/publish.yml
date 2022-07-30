@@ -51,8 +51,6 @@ jobs:
         if: ${{ false }}
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          GITHUB_USERNAME: 
-          GITHUB_EMAIL: 
           target: gh-pages
           path: template.qmd
         env:

@@ -42,11 +42,11 @@ jobs:
           quarto publish gh-pages index.qmd
           cd ..
           [ -d thumbs ] || mkdir thumbs
-          Rscript -e "webshot2::webshot(url = \"index/index.html\", file = paste0(file.path(\"thumbs\", basename(\"${{ github.repository }}\")), \".png\"), vwidth = 1920, vheight = 1080)"
+          Rscript -e "webshot2::webshot(url = \"index/index.html\", file = \"template.png\", vwidth = 1920, vheight = 1080)"
           rm -rf index
-          git add thumbs/*.png
+          git add template.png
           git commit -m "ci: update thumbs" || echo "No changes to commit"
-          git push origin || echo "No changes to commit"  
+          git push origin || echo "No changes to commit" 
       - name: Render and Publish
         if: ${{ false }}
         uses: quarto-dev/quarto-actions/publish@v2

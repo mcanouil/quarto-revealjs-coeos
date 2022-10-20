@@ -13,6 +13,3 @@ contributes:
         <a href = "https://creativecommons.org/licenses/by-sa/4.0/">License: CC-BY-SA-4.0</a>
       logo: coeos.svg
       include-in-header: favicon.html
-      format-resources:
-        - setup-ggplot2-coeos.R
-        - about.qmd

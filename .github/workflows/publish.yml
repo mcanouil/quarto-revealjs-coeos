@@ -5,6 +5,10 @@ on:
 
 name: Quarto Publish
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest

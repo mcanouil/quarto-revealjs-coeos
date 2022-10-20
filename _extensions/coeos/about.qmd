@@ -11,7 +11,7 @@
         <li><a href = "https://mickael.canouil.fr/" target = "_blank"><i class = "fas fa-home"></i> mickael.canouil.fr</a></li>
         <li><a href = "https://www.linkedin.com/in/mickael-canouil/" target = "_blank"><i class = "fab fa-linkedin"></i> mickael-canouil</a></li>
         <li><a href = "https://github.com/mcanouil/" target = "_blank"><i class = "fab fa-github"></i> mcanouil</a></li>
-        <li><a href = "https://twitter.com/mickaelcanouil/" target = "_blank"><i class = "fab fa-twitter"></i> mickaelcanouil</a></li>
+        <li><a href = "https://twitter.com/MickaelCanouil/" target = "_blank"><i class = "fab fa-twitter"></i> mickaelcanouil</a></li>
       </ul>
     </td>
   </tr>

@@ -35,16 +35,27 @@ $code-block-border-color: $body-color !default;
   text-align: left;
 }
 
-#title-slide .institute {
+#title-slide .institute, #title-slide .quarto-title-affiliation {
   font-style: italic;
   font-size: 80%;
 }
 
-#title-slide .author {
+#title-slide .author, #title-slide .quarto-title-author-name {
   color: $body-color;
 }
 
-#title-slide p.author::before {
+#title-slide .quarto-title-authors {
+  display: flex;
+  justify-content: left;
+
+  .quarto-title-author {
+    padding-left: 0em;
+    padding-right: 0em;
+    width: 100%;
+  }
+}
+
+#title-slide p.author::before, #title-slide div.quarto-title-author::before {
   content: "";
   display: block;
   border: none;
@@ -97,4 +108,13 @@ code.sourceCode > span {
 
 .center-x {
   text-align: center;
+}
+
+.center-xy {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateY(-50%), translateX(-50%);
+  transform: translateY(-50%), translateX(-50%);
 }

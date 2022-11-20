@@ -1,11 +1,12 @@
 title: Coeos Presentation Template
 author: Mickaël CANOUIL
-version: 1.0.0
+version: 1.2.0
+quarto-required: ">=1.2.231"
 contributes:
   formats:
     revealjs:
       slide-number: c
-      highlight-style: github
+      highlight-style: github-dark
       theme: coeos.scss
       footer: |
         <a href="https://mickael.canouil.fr/">mickael.canouil.fr</a>

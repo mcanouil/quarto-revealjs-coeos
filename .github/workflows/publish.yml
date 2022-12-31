@@ -29,7 +29,6 @@ jobs:
             webshot2
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-
       - name: Render and Publish
         run: |
           [ -d index ] || mkdir index
@@ -45,12 +44,23 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           quarto publish gh-pages index.qmd
           cd ..
-          [ -d thumbs ] || mkdir thumbs
           Rscript -e "webshot2::webshot(url = \"index/index.html\", file = \"template.png\", vwidth = 1920, vheight = 1080)"
           rm -rf index
-          git add template.png
-          git commit -m "ci: update thumbs" || echo "No changes to commit"
-          git push origin || echo "No changes to commit" 
+          # git add template.png
+          # git commit -m "ci: update thumbs" || echo "No changes to commit"
+          # git push origin || echo "No changes to commit"
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          add-paths: template.png
+          commit-message: "ci: update thumbs"
+          signoff: false
+          branch: ci/latest-quarto-updates
+          delete-branch: true
+          title: "ci: update thumbs"
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          committer: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
       - name: Render and Publish
         if: ${{ false }}
         uses: quarto-dev/quarto-actions/publish@v2

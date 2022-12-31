@@ -18,4 +18,4 @@ quarto use template mcanouil/quarto-revealjs-coeos
 
 ## Documentation
 
-[`Quarto` documentation on `reveal.js` format.](https://quarto.org/docs/presentations/revealjs/)
+[`Quarto` documentation on `revealjs` format.](https://quarto.org/docs/presentations/revealjs/)

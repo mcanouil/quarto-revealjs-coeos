@@ -33,9 +33,13 @@ $code-block-border-color: $body-color !default;
 #title-slide {
   text-align: left;
 
-  .institute, .quarto-title-affiliation {
+  .subtitle,
+  .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
     font-style: italic;
-    font-size: 80%;
+    // font-size: 80%;
+    color: #7F7F7F;
   }
 
   .author, .quarto-title-author-name {
@@ -63,9 +67,9 @@ $code-block-border-color: $body-color !default;
     margin-bottom: 1em;
   }
 
-  p, a {
-    color: #7F7F7F;
-  }
+  // p, a {
+  //   color: #7F7F7F;
+  // }
 }
 
 .footer {

@@ -1,6 +1,6 @@
 title: Coeos Presentation Template
 author: Mickaël CANOUIL
-version: 1.2.0
+version: 1.2.1
 quarto-required: ">=1.2.280"
 contributes:
   formats:
@@ -13,4 +13,6 @@ contributes:
         |
         <a href = "https://creativecommons.org/licenses/by-sa/4.0/">License: CC-BY-SA-4.0</a>
       logo: coeos.svg
-      include-in-header: favicon.html
+      include-in-header:
+        - text: |
+            <link rel = "shortcut icon" href = "https://raw.githubusercontent.com/mcanouil/hex-stickers/main/SVG/coeos.svg" />

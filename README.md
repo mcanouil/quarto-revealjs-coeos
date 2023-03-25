@@ -12,9 +12,14 @@ This is a repository for `Quarto` `revealjs` template.
 
 This [Quarto](quarto.org) extension can be installed/used using the following command:
 
-```bash
-quarto use template mcanouil/quarto-revealjs-coeos
-```
+- Install
+  ```bash
+  quarto add mcanouil/quarto-revealjs-coeos
+  ```
+- Use
+  ```bash
+  quarto use template mcanouil/quarto-revealjs-coeos
+  ```
 
 ## Documentation
 

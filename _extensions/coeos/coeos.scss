@@ -6,7 +6,7 @@
 
 // fonts
 $font-family-sans-serif: 'Alegreya Sans', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', sans-serif !default;
-   
+
 // colors
 $body-bg: #333333 !default;
 $body-color: #FAFAFA !default;
@@ -42,14 +42,15 @@ $code-block-border-color: $body-color !default;
     color: #7F7F7F;
   }
 
-  .author, .quarto-title-author-name {
+  .author,
+  .quarto-title-author-name {
     color: $body-color;
   }
 
   .quarto-title-authors {
     display: flex;
     justify-content: left;
-  
+
     .quarto-title-author {
       padding-left: 0em;
       padding-right: 0em;
@@ -57,7 +58,8 @@ $code-block-border-color: $body-color !default;
     }
   }
 
-  p.author::before, div.quarto-title-author::before {
+  p.author::before,
+  div.quarto-title-author::before {
     content: "";
     display: block;
     border: none;
@@ -93,7 +95,8 @@ $code-block-border-color: $body-color !default;
   bottom: 10px !important;
 }
 
-.slide-number, .reveal.has-logo .slide-number {
+.slide-number,
+.reveal.has-logo .slide-number {
   bottom: 10px !important;
   right: 10px !important;
   top: unset !important;
@@ -105,7 +108,7 @@ $code-block-border-color: $body-color !default;
   border-radius: 4px;
 }
 
-code.sourceCode > span {
+code.sourceCode>span {
   color: $body-bg !important;
 }
 

@@ -1,10 +1,9 @@
 ---
 title: "A Title"
 subtitle: "A Subtitle"
-author: Mickaël Canouil, *Ph.D.*
-institute: Inserm U1283 / CNRS UMR8199 / Institut Pasteur de Lille / Université de Lille
+author: "Mickaël Canouil, *Ph.D.*"
+institute: "Solopreneur"
 date: today
-date-format: "dddd, [the] D[<sup style='font-size:65%;font-style:italic;'>th</sup>] [of] MMMM, YYYY"
 embed-resources: false
 format: coeos-revealjs
 ---

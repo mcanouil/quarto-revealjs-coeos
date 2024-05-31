@@ -1,0 +1,80 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            sysfonts
+            ggplot2
+            ggtext
+            showtext
+            knitr
+            webshot2
+      
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: pre-release
+          tinytex: true
+      
+      - name: Render Quarto Project
+        shell: bash
+        run: |
+          quarto render template.qmd --to coeos-revealjs --output index.html --output-dir _site
+      
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Update Screenshot
+        shell: bash
+        run: |
+          BRANCH=ci/update-thumbs
+          if git show-ref --quiet refs/heads/${BRANCH}; then
+            echo "Branch ${BRANCH} already exists."
+            git branch -D "${BRANCH}"
+            git push origin --delete "${BRANCH}"
+          fi
+          git checkout -b "${BRANCH}"
+          Rscript -e "webshot2::webshot(url = \"_site/index.html\", file = \"template.png\", vwidth = 1920, vheight = 1080)"
+          git config --local user.name github-actions[bot]
+          git config --local user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add template.png
+          git commit -m "ci: update thumbs"
+          git push --force origin ${BRANCH}
+          gh pr create --fill-first --base "main" --head "${BRANCH}"
+          gh pr merge --auto --squash --delete-branch

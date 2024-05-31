@@ -16,5 +16,3 @@ contributes:
       include-in-header:
         - text: |
             <link rel="shortcut icon" href="https://raw.githubusercontent.com/mcanouil/hex-stickers/main/SVG/coeos.svg" />
-      format-resources:
-        - _about.qmd

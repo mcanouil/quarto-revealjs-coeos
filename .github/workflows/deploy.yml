@@ -48,7 +48,7 @@ jobs:
       - name: Render Quarto Project
         shell: bash
         run: |
-          quarto add mcanouil/quarto-revealjs-coeos
+          quarto add mcanouil/quarto-revealjs-coeos --no-prompt
           quarto render template.qmd --to coeos-revealjs --output index.html --output-dir _site
       
       - uses: actions/configure-pages@v5

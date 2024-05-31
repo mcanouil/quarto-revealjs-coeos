@@ -49,4 +49,4 @@ ggplot(mtcars, aes(wt, mpg)) + geom_point()
 
 With only text
 
-{{< include _extensions/mcanouil/coeos/about.qmd >}}
+{{< include _about.qmd >}}

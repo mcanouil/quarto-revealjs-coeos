@@ -57,6 +57,7 @@ jobs:
         shell: bash
         run: |
           npx -y decktape reveal \
+            --headless \
             --screenshots \
             --screenshots-format png \
             --screenshots-directory . \

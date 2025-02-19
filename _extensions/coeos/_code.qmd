@@ -1,0 +1,35 @@
+```{r}
+#| include: false
+sysfonts::font_add_google("Alegreya Sans", "Alegreya Sans", regular.wt = 300)
+showtext::showtext_auto()
+source("_extensions/mcanouil/coeos/setup-ggplot2-coeos.R")
+```
+
+# PART 1 With `code` {.center .center-x}
+
+## Introduction
+
+### Subtitle
+
+`some code` and some text.  
+A URL [mickael.canouil.fr](https://mickael.canouil.fr/).
+
+```{r}
+#| echo: true
+1 + 1
+```
+
+```{r}
+#| echo: true
+x <- 1
+y <- x + 1
+y
+```
+
+## GGPLOT2 With `code`
+
+```{r}
+#| echo: true
+library(ggplot2)
+ggplot(mtcars, aes(wt, mpg)) + geom_point()
+```

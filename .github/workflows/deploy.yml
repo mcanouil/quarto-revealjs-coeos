@@ -28,17 +28,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: r-lib/actions/setup-r@v2
-
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: |
-            sysfonts
-            ggplot2
-            ggtext
-            showtext
-            knitr
-
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: pre-release
@@ -68,7 +57,7 @@ jobs:
         shell: bash
         run: npm install -g decktape
 
-      - name: Update Screenshot
+      - name: Take Screenshot
         shell: bash
         run: |
           decktape reveal \
@@ -78,7 +67,10 @@ jobs:
             --size "1920x1080" \
             --slides 1 \
             _site/index.html _site/index.pdf
-          
+  
+      - name: Update Screenshot
+        shell: bash
+        run: |       
           mv _site/index_1_1920x1080.png .github/template.png
           BRANCH=ci/update-thumbs
           if git show-ref --quiet refs/heads/${BRANCH}; then

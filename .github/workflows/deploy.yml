@@ -38,7 +38,6 @@ jobs:
             ggtext
             showtext
             knitr
-            webshot2
       
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -49,6 +48,8 @@ jobs:
         shell: bash
         run: |
           echo -e "project:\n  output-dir: _site" > _quarto.yml
+          quarto add mcanouil/quarto-iconify --no-prompt
+          sed -i 's|_extensions/mcanouil/coeos|_extensions/coeos|g' template.qmd
           quarto render template.qmd --output index.html
       
       - uses: actions/configure-pages@v5

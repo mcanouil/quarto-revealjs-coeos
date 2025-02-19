@@ -12,7 +12,7 @@ format: coeos-revealjs
 #| include: false
 sysfonts::font_add_google("Alegreya Sans", "Alegreya Sans", regular.wt = 300)
 showtext::showtext_auto()
-source("_extensions/coeos/setup-ggplot2-coeos.R")
+source("_extensions/mcanouil/coeos/setup-ggplot2-coeos.R")
 ```
 
 # PART 1 With `code` {.center .center-x}
@@ -53,3 +53,5 @@ ggplot(mtcars, aes(wt, mpg)) + geom_point()
 ## Another slide {.smaller}
 
 ![An image]({{< placeholder 900 300>}})
+
+{{< include _extensions/mcanouil/coeos/_about.qmd >}}

@@ -1,3 +1,5 @@
 /.DS_Store
 /.luarc.json
-build/
+template_files/
+template.html
+_extensions/mcanouil/iconify/

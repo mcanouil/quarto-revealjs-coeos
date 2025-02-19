@@ -2,7 +2,7 @@
 title: "A Title"
 subtitle: "A Subtitle"
 author: "Mickaël Canouil, *Ph.D.*"
-institute: "Solopreneur"
+institute: "Freelance"
 date: today
 embed-resources: false
 format: coeos-revealjs

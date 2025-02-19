@@ -62,7 +62,7 @@ jobs:
             --screenshots \
             --screenshots-format png \
             --screenshots-directory . \
-            --size "1920x1080" \
+            --size "1280×640" \
             --slides 1 \
             _site/index.html _site/index.pdf
   

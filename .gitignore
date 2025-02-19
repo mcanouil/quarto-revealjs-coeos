@@ -1,7 +1,3 @@
 /.DS_Store
-about.qmd
-setup-ggplot2-coeos.R
-template.html
-template_files/
-
 /.luarc.json
+build/

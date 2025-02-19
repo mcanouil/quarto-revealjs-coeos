@@ -48,8 +48,8 @@ jobs:
       - name: Render Quarto Project
         shell: bash
         run: |
-          quarto add mcanouil/quarto-revealjs-coeos --no-prompt
-          quarto render template.qmd --to coeos-revealjs --output index.html --output-dir _site
+          echo -e "project:\n  output-dir: _site" > _quarto.yml
+          quarto render template.qmd --output index.html
       
       - uses: actions/configure-pages@v5
 
@@ -60,22 +60,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Update Screenshot
-        shell: bash
-        run: |
-          BRANCH=ci/update-thumbs
-          if git show-ref --quiet refs/heads/${BRANCH}; then
-            echo "Branch ${BRANCH} already exists."
-            git branch -D "${BRANCH}"
-            git push origin --delete "${BRANCH}"
-          fi
-          git checkout -b "${BRANCH}"
-          Rscript -e "webshot2::webshot(url = \"_site/index.html\", file = \"template.png\", vwidth = 1920, vheight = 1080)"
-          git config --local user.name github-actions[bot]
-          git config --local user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add template.png
-          git commit -m "ci: update thumbs"
-          git push --force origin ${BRANCH}
-          gh pr create --fill-first --base "main" --head "${BRANCH}"
-          gh pr merge --auto --squash --delete-branch

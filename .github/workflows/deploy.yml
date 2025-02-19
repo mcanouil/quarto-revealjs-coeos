@@ -53,14 +53,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
 
-      - name: Install Decktape
-        shell: bash
-        run: npm install -g decktape
-
       - name: Take Screenshot
         shell: bash
         run: |
-          decktape reveal \
+          npx -y decktape reveal \
             --screenshots \
             --screenshots-format png \
             --screenshots-directory . \

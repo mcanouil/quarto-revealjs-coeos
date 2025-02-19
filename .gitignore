@@ -2,6 +2,7 @@
 /.luarc.json
 template_files/
 template.html
+index.qmd
 _quarto.yml
 _site/
 _extensions/mcanouil/iconify/

@@ -57,7 +57,8 @@ jobs:
         shell: bash
         run: |
           npx -y decktape reveal \
-            --headless true\
+            --chrome-arg=--no-sandbox \
+            --chrome-arg=--disable-setuid-sandbox \
             --screenshots \
             --screenshots-format png \
             --screenshots-directory . \

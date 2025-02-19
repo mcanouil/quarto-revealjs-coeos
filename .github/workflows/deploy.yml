@@ -65,11 +65,11 @@ jobs:
             --size "1280x640" \
             --slides 1 \
             _site/index.html _site/index.pdf
+          mv _site/index_1_1280x640.png .github/template.png
   
       - name: Update Screenshot
         shell: bash
         run: |       
-          mv _site/index_1_1920x1080.png .github/template.png
           BRANCH=ci/update-thumbs
           if git show-ref --quiet refs/heads/${BRANCH}; then
             echo "Branch ${BRANCH} already exists."

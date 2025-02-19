@@ -1,0 +1,12 @@
+# About
+
+::: {layout="[0.38, -0.02, 0.60]" layout-valign="center"}
+<img src = "https://github.com/mcanouil.png" class = "picture" />
+
+- [{{< iconify fa6-solid house-chimney-user >}} mickael.canouil.fr](https://mickael.canouil.fr/){style="text-decoration: none;"}
+- [{{< iconify fa6-solid envelope >}} pro@mickael.canouil.dev](mailto:pro@mickael.canouil.dev){style="text-decoration: none;"}
+- [{{< iconify fa6-brands linkedin >}} mickaelcanouil](https://www.linkedin.com/in/mickaelcanouil/){style="text-decoration: none;"}
+- [{{< iconify fa6-brands github >}} \@mcanouil](https://github.com/mcanouil/){style="text-decoration: none;"}
+- [{{< iconify fa6-brands twitter >}} \@MickaelCanouil](https://twitter.com/MickaelCanouil/){style="text-decoration: none;"}
+- [{{< iconify fa6-brands mastodon >}} \@MickaelCanouil\@fosstodon.org](https://fosstodon.org/@MickaelCanouil/){style="text-decoration: none;"}
+:::

@@ -38,7 +38,6 @@ jobs:
             ggtext
             showtext
             knitr
-            webshot2
       
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -48,8 +47,10 @@ jobs:
       - name: Render Quarto Project
         shell: bash
         run: |
-          quarto add mcanouil/quarto-revealjs-coeos --no-prompt
-          quarto render template.qmd --to coeos-revealjs --output index.html --output-dir _site
+          echo -e "project:\n  output-dir: _site" > _quarto.yml
+          quarto add mcanouil/quarto-iconify --no-prompt
+          sed -i 's|_extensions/mcanouil/coeos|_extensions/coeos|g' template.qmd
+          quarto render template.qmd --output index.html
       
       - uses: actions/configure-pages@v5
 
@@ -61,9 +62,25 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      - name: Install Decktape
+        shell: bash
+        run: npm install -g decktape
+
       - name: Update Screenshot
         shell: bash
         run: |
+          decktape reveal \
+            --screenshots \
+            --screenshots-format png \
+            --screenshots-directory . \
+            --size "1920x1080" \
+            --slides 1 \
+            _site/index.html _site/index.pdf
+          
+          mv _site/index_1_1920x1080.png .github/template.png
           BRANCH=ci/update-thumbs
           if git show-ref --quiet refs/heads/${BRANCH}; then
             echo "Branch ${BRANCH} already exists."
@@ -71,11 +88,11 @@ jobs:
             git push origin --delete "${BRANCH}"
           fi
           git checkout -b "${BRANCH}"
-          Rscript -e "webshot2::webshot(url = \"_site/index.html\", file = \"template.png\", vwidth = 1920, vheight = 1080)"
           git config --local user.name github-actions[bot]
           git config --local user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add template.png
+          git add .github/template.png
           git commit -m "ci: update thumbs"
           git push --force origin ${BRANCH}
           gh pr create --fill-first --base "main" --head "${BRANCH}"
+          sleep 15
           gh pr merge --auto --squash --delete-branch

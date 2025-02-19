@@ -1,7 +1,8 @@
 /.DS_Store
-about.qmd
-setup-ggplot2-coeos.R
-template.html
-template_files/
-
 /.luarc.json
+template_files/
+template.html
+_quarto.yml
+_site/
+_extensions/mcanouil/iconify/
+/.quarto/

@@ -1,10 +1,9 @@
 ---
 title: "A Title"
 subtitle: "A Subtitle"
-author: Mickaël Canouil, *Ph.D.*
-institute: Inserm U1283 / CNRS UMR8199 / Institut Pasteur de Lille / Université de Lille
+author: "Mickaël Canouil, *Ph.D.*"
+institute: "Freelance"
 date: today
-date-format: "dddd, [the] D[<sup style='font-size:65%;font-style:italic;'>th</sup>] [of] MMMM, YYYY"
 embed-resources: false
 format: coeos-revealjs
 ---
@@ -15,6 +14,8 @@ sysfonts::font_add_google("Alegreya Sans", "Alegreya Sans", regular.wt = 300)
 showtext::showtext_auto()
 source("_extensions/mcanouil/coeos/setup-ggplot2-coeos.R")
 ```
+
+# PART 1 With `code` {.center .center-x}
 
 ## Introduction
 
@@ -43,10 +44,14 @@ library(ggplot2)
 ggplot(mtcars, aes(wt, mpg)) + geom_point()
 ```
 
-# PART 1 With `code` {.center .center-x}
+# PART 2 Without `code` {.center .center-x}
 
-## New slide
+## New slide {.smaller}
 
-With only text
+{{< lipsum 1 >}}
+
+## Another slide {.smaller}
+
+![An image]({{< placeholder 900 300>}})
 
 {{< include _extensions/mcanouil/coeos/_about.qmd >}}

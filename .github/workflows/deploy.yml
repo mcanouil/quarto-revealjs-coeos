@@ -61,3 +61,38 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      - name: Install Decktape
+        shell: bash
+        run: npm install -g decktape
+
+      - name: Update Screenshot
+        shell: bash
+        run: |
+          decktape reveal \
+            --screenshots \
+            --screenshots-format png \
+            --screenshots-directory . \
+            --size "1920x1080" \
+            --slides 1 \
+            _site/index.html _site/index.pdf
+          
+          mv _site/index_1_1920x1080.png .github/template.png
+          BRANCH=ci/update-thumbs
+          if git show-ref --quiet refs/heads/${BRANCH}; then
+            echo "Branch ${BRANCH} already exists."
+            git branch -D "${BRANCH}"
+            git push origin --delete "${BRANCH}"
+          fi
+          git checkout -b "${BRANCH}"
+          git config --local user.name github-actions[bot]
+          git config --local user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add .github/template.png
+          git commit -m "ci: update thumbs"
+          git push --force origin ${BRANCH}
+          gh pr create --fill-first --base "main" --head "${BRANCH}"
+          sleep 15
+          gh pr merge --auto --squash --delete-branch

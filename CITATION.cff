@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: "Coeos Reveal.js Extension for Quarto"
+message: "If you use this project, please cite it as below."
+type: software
+authors:
+  - family-names: "Canouil"
+    given-names: "Mickaël"
+    orcid: "https://orcid.org/0000-0002-3396-4549"
+repository-code: "https://github.com/mcanouil/quarto-revealjs-coeos"
+url: "http://m.canouil.dev/quarto-revealjs-coeos/"
+license: "MIT"
+date-released: "2025-02-19"
+version: 1.4.0

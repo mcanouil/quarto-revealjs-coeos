@@ -4,7 +4,9 @@ subtitle: "A Subtitle"
 author: "Mickaël Canouil, *Ph.D.*"
 institute: "Freelance"
 date: today
-format: coeos-revealjs
+format:
+  coeos-revealjs:
+    output-file: index
 ---
 
 # PART 1 Without `code` {.center .center-x}

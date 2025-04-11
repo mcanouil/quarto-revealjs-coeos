@@ -30,6 +30,7 @@ jobs:
       quarto: "release"
   screenshot:
     runs-on: ubuntu-latest
+    needs: release
     steps:
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -48,7 +49,7 @@ jobs:
             --size "1280x640" \
             --slides 1 \
             "${GH_PAGES_URL}" index.pdf
-          mv _site/index_1_1280x640.png .github/template.png
+          mv index_1_1280x640.png .github/template.png
 
       - name: Update Screenshot
         env:

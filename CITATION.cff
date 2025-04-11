@@ -9,5 +9,5 @@ authors:
 repository-code: "https://github.com/mcanouil/quarto-revealjs-coeos"
 url: "http://m.canouil.dev/quarto-revealjs-coeos/"
 license: "MIT"
-date-released: "2025-02-19"
-version: 1.4.0
+date-released: "2025-04-11"
+version: 1.4.1

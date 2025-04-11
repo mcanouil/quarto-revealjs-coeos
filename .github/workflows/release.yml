@@ -38,6 +38,7 @@ jobs:
       - name: Take Screenshot
         env:
           GH_PAGES_URL: ${{ format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+          GH_TOKEN: ${{ secrets.github_token }} # gh cli
         shell: bash
         run: |
           npx -y decktape reveal \
@@ -49,13 +50,9 @@ jobs:
             --size "1280x640" \
             --slides 1 \
             "${GH_PAGES_URL}" index.pdf
-          mv index_1_1280x640.png .github/template.png
 
-      - name: Update Screenshot
-        env:
-          GH_TOKEN: ${{ secrets.github_token }} # gh cli
-        shell: bash
-        run: |
+          mv -f *.png .github/template.png
+
           BRANCH=ci/update-thumbs
           if git show-ref --quiet refs/heads/${BRANCH}; then
             echo "Branch ${BRANCH} already exists."

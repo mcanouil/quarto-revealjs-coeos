@@ -23,8 +23,28 @@ contributes:
               const dateElements = document.querySelectorAll("p.date, div.listing-date");
               dateElements.forEach((el) => {
                 el.innerHTML = el.innerHTML.replace(
-                  /(\d+)(rd|st|th)/g,
+                  /(\d+)(st|nd|rd|th)/g,
                   "$1<sup style='font-size:0.5em;font-style:italic;'>$2</sup>"
                 );
               });
+            </script>
+            <script type="text/javascript">
+            Reveal.addEventListener('ready', (event) => {
+              if (event.indexh === 0) {
+                document.querySelector("div.slide-menu-button").style.display = "none";
+                document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
+              } else {
+                document.querySelector("div.slide-menu-button").style.display = "block";
+                document.querySelector("div.has-logo > img.slide-logo").style.display = null;
+              }
+            });
+            Reveal.addEventListener('slidechanged', (event) => {
+              if (event.indexh === 0) {
+                document.querySelector("div.slide-menu-button").style.display = "none";
+                document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
+              } else {
+                document.querySelector("div.slide-menu-button").style.display = "block";
+                document.querySelector("div.has-logo > img.slide-logo").style.display = null;
+              }
+            });
             </script>

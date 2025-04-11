@@ -74,13 +74,17 @@ $code-block-border-color: $body-color !default;
   // }
 }
 
+.reveal .slide-number > a[href*='title-slide'] {
+  display: none;
+}
+
 .footer {
   bottom: 10px !important;
   color: $body-color !important;
 }
 
 .slide-logo {
-  display: block !important;
+  display: block;
   position: fixed !important;
   top: 0 !important;
   right: 10px !important;

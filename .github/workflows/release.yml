@@ -25,7 +25,7 @@ jobs:
     secrets: inherit
     with:
       version: "${{ github.event.inputs.version }}"
-      formats: "revealjs"
+      formats: "coeos-revealjs"
       tinytex: false
       quarto: "release"
   screenshot:

@@ -4,7 +4,6 @@ subtitle: "A Subtitle"
 author: "Mickaël Canouil, *Ph.D.*"
 institute: "Freelance"
 date: today
-embed-resources: false
 format: coeos-revealjs
 ---
 
@@ -17,5 +16,3 @@ format: coeos-revealjs
 ## Another slide {.smaller}
 
 ![An image]({{< placeholder 900 300>}})
-
-{{< include _extensions/mcanouil/coeos/_about.qmd >}}

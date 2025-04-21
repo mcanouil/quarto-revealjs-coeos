@@ -18,3 +18,25 @@ format:
 ## Another slide {.smaller}
 
 ![An image]({{< placeholder 900 300>}})
+
+## Tabset {.smaller}
+
+:::: {.panel-tabset}
+
+### Lipsum
+
+{{< lipsum 1-1 >}}
+
+### Placeholder
+
+{{< placeholder 600 400 >}}
+
+### Lipsum 2
+
+{{< lipsum 2-2 >}}
+
+### Placeholder 2
+
+{{< placeholder 600 400 >}}
+
+:::

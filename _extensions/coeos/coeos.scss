@@ -15,8 +15,10 @@ $link-color: $body-color !default;
 $code-bg: $body-color !default;
 $code-color: $body-bg !default;
 
-$code-block-bg: $body-color !default;
+$code-block-bg: lighten($body-bg, 5%) !default;
 $code-block-border-color: $body-color !default;
+
+$btn-code-copy-color: $body-color !default;
 
 /*-- scss:rules --*/
 
@@ -115,10 +117,6 @@ $code-block-border-color: $body-color !default;
   border-radius: 4px;
 }
 
-div.sourceCode pre {
-  background-color: lighten($body-bg, 5%) !important;
-}
-
 .center-x {
   text-align: center;
 }
@@ -134,4 +132,9 @@ div.sourceCode pre {
 
 .reveal a {
   text-decoration: underline;
+}
+
+code.sourceCode .code-annotation-anchor {
+  color: darken($body-color, 25%) !important;
+  border-color: darken($body-color, 25%) !important;
 }

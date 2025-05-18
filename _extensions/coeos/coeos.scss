@@ -115,8 +115,8 @@ $code-block-border-color: $body-color !default;
   border-radius: 4px;
 }
 
-code.sourceCode>span {
-  color: $body-bg !important;
+div.sourceCode pre {
+  background-color: lighten($body-bg, 5%) !important;
 }
 
 .center-x {

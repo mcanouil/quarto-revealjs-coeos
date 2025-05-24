@@ -7,8 +7,11 @@ contributes:
     revealjs:
       theme: coeos.scss
       highlight-style: github-dark
+      mermaid:
+        theme: dark
       date-format: 'dddd[, the] Do [of] MMMM, YYYY'
       slide-number: c
+      code-annotations: select
       footer: |
         <a href="https://mickael.canouil.fr/">mickael.canouil.fr</a>
         |

@@ -45,7 +45,7 @@ format:
 
 ## Code annotation
 
-```{.python}
+```{.python code-line-numbers="1-7|1|3|4|1-7"}
 import numpy as np # <1>
 
 def f(x): # <2>

@@ -90,10 +90,51 @@
     }
   });
 </script>
-<style>
-  .panel-tabset ul li a:focus,
-  .panel-tabset ul li a:active {
-    outline: none;
-    box-shadow: none;
+<script type="text/javascript">
+  function hideAllTippy() {
+    document.querySelectorAll('.code-annotation-anchor').forEach(anchor => {
+      const tippyInstance = anchor._tippy;
+      if (tippyInstance) {
+        tippyInstance.hide();
+      }
+    });
   }
-</style>
+
+  Reveal.on('fragmentshown', (event) => {
+    hideAllTippy();
+
+    const fragment = event.fragment;
+    const classesToCheck = ['has-line-highlights', 'visible', 'current-fragment'];
+    if (classesToCheck.some(cls => fragment.classList.contains(cls))) {
+      const codeAnnotationAnchors = fragment.querySelectorAll('.code-annotation-anchor');
+      let matchCount = 0;
+      for (const anchor of codeAnnotationAnchors) {
+        const nextElement = anchor.nextElementSibling;
+        if (nextElement &&
+          nextElement.classList.contains('code-annotation-target') &&
+          nextElement.classList.contains('highlight-line')) {
+          matchCount++;
+          if (matchCount > 1) break;
+        }
+      }
+      if (matchCount === 1) {
+        for (const anchor of codeAnnotationAnchors) {
+          const nextElement = anchor.nextElementSibling;
+          if (nextElement &&
+            nextElement.classList.contains('code-annotation-target') &&
+            nextElement.classList.contains('highlight-line')) {
+            const tippyInstance = anchor._tippy;
+            if (tippyInstance) {
+              tippyInstance.show();
+              break;
+            }
+          }
+        }
+      }
+    }
+  });
+
+  Reveal.on('fragmenthidden', (event) => {
+    hideAllTippy();
+  });
+</script>

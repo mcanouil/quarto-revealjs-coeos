@@ -76,7 +76,7 @@ $btn-code-copy-color: $body-color !default;
   // }
 }
 
-.reveal .slide-number > a[href*='title-slide'] {
+.reveal .slide-number>a[href*='title-slide'] {
   display: none;
 }
 
@@ -107,6 +107,7 @@ $btn-code-copy-color: $body-color !default;
   right: 10px !important;
   top: unset !important;
   color: $body-color !important;
+
   a {
     text-decoration: none !important;
   }
@@ -137,4 +138,17 @@ $btn-code-copy-color: $body-color !default;
 code.sourceCode .code-annotation-anchor {
   color: darken($body-color, 25%) !important;
   border-color: darken($body-color, 25%) !important;
+  background-color: $body-bg !important;
+}
+
+code.sourceCode .code-annotation-anchor .code-annotation-active {
+  color: $body-bg !important;
+  border-color: $body-bg !important;
+  background-color: darken($body-color, 25%) !important;
+}
+
+.panel-tabset ul li a:focus,
+.panel-tabset ul li a:active {
+  outline: none;
+  box-shadow: none;
 }

@@ -94,6 +94,7 @@ $btn-code-copy-color: $body-color !default;
   height: 100% !important;
   width: auto !important;
   color: $body-color !important;
+  z-index: unset !important;
 }
 
 .slide-menu-button {

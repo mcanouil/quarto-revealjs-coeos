@@ -31,6 +31,7 @@
     );
   });
 </script>
+
 <script type="text/javascript" id="menu-logo-visibility">
   Reveal.addEventListener("ready", (event) => {
     if (event.indexh === 0) {
@@ -51,6 +52,7 @@
     }
   });
 </script>
+
 <script type="text/javascript" id="panel-tabset-fragments">
   Reveal.on("ready", function () {
     const tabsetSlides = document.querySelectorAll(".reveal .slides section .panel-tabset");
@@ -90,6 +92,7 @@
     }
   });
 </script>
+
 <script type="text/javascript" id="code-annotation-fragments">
   function hideAllTippy() {
     document.querySelectorAll('.code-annotation-anchor').forEach(anchor => {
@@ -137,4 +140,75 @@
   Reveal.on('fragmenthidden', (event) => {
     hideAllTippy();
   });
+</script>
+
+<script type="text/javascript" id="favicon-from-logo">
+  (function () {
+    let lastHref;
+    let observer;
+
+    function detectType(url) {
+      const clean = (url || "").split("?")[0].split("#")[0];
+      const ext = clean.slice(clean.lastIndexOf(".") + 1).toLowerCase();
+      switch (ext) {
+        case "svg": return "image/svg+xml";
+        case "png": return "image/png";
+        case "ico": return "image/x-icon";
+        case "jpg":
+        case "jpeg": return "image/jpeg";
+        default: return "";
+      }
+    }
+
+    function getLogo() {
+      return document.querySelector('img.slide-logo[src]');
+    }
+
+    function upsertFavicon(rel, href, type) {
+      const sel = `link[rel="${rel}"][data-slide-favicon="true"]`;
+      let link = document.querySelector(sel);
+      if (!link) {
+        link = document.createElement("link");
+        link.rel = rel;
+        link.setAttribute("data-slide-favicon", "true");
+        document.head.appendChild(link);
+      }
+      link.href = href;
+      if (type) link.type = type; else link.removeAttribute("type");
+    }
+
+    function setFaviconFromSlideLogo() {
+      const logoImg = getLogo();
+      const src = logoImg && (logoImg.currentSrc || logoImg.src);
+      if (!src) return;
+
+      if (src === lastHref) return; // No work if unchanged
+      lastHref = src;
+
+      const type = detectType(src);
+      // Modern rel="icon" plus legacy "shortcut icon" for broader support
+      upsertFavicon("icon", src, type);
+      upsertFavicon("shortcut icon", src, type);
+
+      if (observer) {
+        observer.disconnect();
+        observer = undefined;
+      }
+    }
+
+    function init() {
+      setFaviconFromSlideLogo();
+      // React to Reveal lifecycle in case logo appears later or changes with slides
+      if (window.Reveal && typeof Reveal.on === "function") {
+        Reveal.on("ready", setFaviconFromSlideLogo);
+        Reveal.on("slidechanged", setFaviconFromSlideLogo);
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init, { once: true });
+    } else {
+      init();
+    }
+  })();
 </script>

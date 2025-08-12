@@ -8,7 +8,7 @@ quarto add mcanouil/quarto-iconify
 ```
 :::
 
-::: {layout="[0.38, -0.02, 0.60]" layout-valign="center"}
+::: {layout="[0.33, -0.02, 0.65]" layout-valign="center"}
 `<img src="https://github.com/mcanouil.png" class="picture" />`{=html}
 
 - [{{< iconify fa6-solid:house-chimney-user >}} mickael.canouil.fr](https://mickael.canouil.fr/){style="text-decoration: none;"}

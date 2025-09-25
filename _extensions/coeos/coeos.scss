@@ -148,6 +148,10 @@ code.sourceCode .code-annotation-anchor .code-annotation-active {
   background-color: darken($body-color, 25%) !important;
 }
 
+p code.sourceCode, li code.sourceCode, td code.sourceCode {
+  background-color: inherit;
+}
+
 .panel-tabset ul li a:focus,
 .panel-tabset ul li a:active {
   outline: none;

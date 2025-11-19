@@ -53,44 +53,122 @@
   });
 </script>
 
-<script type="text/javascript" id="panel-tabset-fragments">
-  Reveal.on("ready", function () {
-    const tabsetSlides = document.querySelectorAll(".reveal .slides section .panel-tabset");
-    tabsetSlides.forEach(function (tabset) {
-      const tabCount = tabset.querySelectorAll("ul.panel-tabset-tabby li").length;
-      for (let i = 0; i < tabCount - 1; i++) {
-        const fragmentDiv = document.createElement("div");
-        fragmentDiv.className = "panel-tabset-fragment fragment";
-        fragmentDiv.dataset.tabIndex = i + 1;
-        fragmentDiv.style.display = "none";
-        tabset.parentNode.appendChild(fragmentDiv);
-      }
-    });
-  });
+<script type="text/javascript" id="panel-tabset-pdf-export">
+  (function () {
+    const TAB_SELECTOR = "ul.panel-tabset-tabby > li";
+    const TAB_LINK_SELECTOR = "ul.panel-tabset-tabby > li a";
 
-  Reveal.on("fragmentshown", (event) => {
-    if (event.fragment.classList.contains("panel-tabset-fragment")) {
-      const tabIndex = parseInt(event.fragment.dataset.tabIndex);
+    function getTabPanes(tabset) {
+      const tabContent = tabset.querySelector(".tab-content");
+      return tabContent ? tabContent.children : [];
+    }
+
+    Reveal.configure({ pdfSeparateFragments: false });
+
+    Reveal.on("ready", function () {
+      const tabsetSlides = document.querySelectorAll(".reveal .slides section .panel-tabset");
+      tabsetSlides.forEach(function (tabset) {
+        const tabCount = tabset.querySelectorAll(TAB_SELECTOR).length;
+        if (tabCount <= 1) return;
+
+        const tabPanes = getTabPanes(tabset);
+        let currentIndex = 0;
+
+        for (let i = 0; i < tabCount; i++) {
+          if (tabPanes[i]) {
+            const fragmentsInPane = tabPanes[i].querySelectorAll(".fragment");
+            fragmentsInPane.forEach(function (fragment) {
+              fragment.setAttribute("data-fragment-index", currentIndex);
+              currentIndex++;
+            });
+          }
+
+          if (i < tabCount - 1) {
+            const fragmentDiv = document.createElement("div");
+            fragmentDiv.className = "panel-tabset-fragment fragment";
+            fragmentDiv.dataset.tabIndex = i + 1;
+            fragmentDiv.setAttribute("data-fragment-index", currentIndex);
+            fragmentDiv.style.display = "none";
+            tabset.parentNode.appendChild(fragmentDiv);
+            currentIndex++;
+          }
+        }
+      });
+    });
+
+    Reveal.on("fragmentshown", function (event) {
+      if (!event.fragment.classList.contains("panel-tabset-fragment")) return;
+
+      const tabIndex = parseInt(event.fragment.dataset.tabIndex, 10);
       const tabset = Reveal.getCurrentSlide().querySelector(".panel-tabset");
-      const tabLinks = tabset.querySelectorAll("ul.panel-tabset-tabby li a");
-      if (tabIndex < tabLinks.length) {
+      if (!tabset) return;
+
+      const tabLinks = tabset.querySelectorAll(TAB_LINK_SELECTOR);
+      if (tabLinks[tabIndex]) {
         tabLinks[tabIndex].click();
       }
-    }
-  });
+    });
 
-  Reveal.on("fragmenthidden", (event) => {
-    if (event.fragment.classList.contains("panel-tabset-fragment")) {
-      const tabIndex = parseInt(event.fragment.dataset.tabIndex);
+    Reveal.on("fragmenthidden", function (event) {
+      if (!event.fragment.classList.contains("panel-tabset-fragment")) return;
+
+      const tabIndex = parseInt(event.fragment.dataset.tabIndex, 10);
       const tabset = Reveal.getCurrentSlide().querySelector(".panel-tabset");
-      const tabLinks = tabset.querySelectorAll("ul.panel-tabset-tabby li a");
-      if (tabIndex > 0) {
-        tabLinks[tabIndex - 1].click();
-      } else {
-        tabLinks[0].click();
+      if (!tabset) return;
+
+      const tabLinks = tabset.querySelectorAll(TAB_LINK_SELECTOR);
+      const targetIndex = tabIndex > 0 ? tabIndex - 1 : 0;
+      if (tabLinks[targetIndex]) {
+        tabLinks[targetIndex].click();
       }
-    }
-  });
+    });
+
+    Reveal.on("pdf-ready", function () {
+      const slides = document.querySelectorAll(".reveal .slides section");
+      slides.forEach(function (slide) {
+        const tabset = slide.querySelector(".panel-tabset");
+        if (!tabset) return;
+
+        const fragments = slide.querySelectorAll(".panel-tabset-fragment");
+        let activeTabIndex = 0;
+
+        fragments.forEach(function (fragment) {
+          if (fragment.classList.contains("visible")) {
+            const tabIndex = parseInt(fragment.dataset.tabIndex, 10);
+            if (tabIndex > activeTabIndex) {
+              activeTabIndex = tabIndex;
+            }
+          }
+        });
+
+        const tabLinks = tabset.querySelectorAll(TAB_LINK_SELECTOR);
+        const tabPanes = getTabPanes(tabset);
+
+        tabLinks.forEach(function (link, index) {
+          const li = link.parentElement;
+          if (index === activeTabIndex) {
+            li.classList.add("active");
+            link.setAttribute("aria-selected", "true");
+            link.setAttribute("tabindex", "0");
+          } else {
+            li.classList.remove("active");
+            link.setAttribute("aria-selected", "false");
+            link.setAttribute("tabindex", "-1");
+          }
+        });
+
+        Array.from(tabPanes).forEach(function (panel, index) {
+          if (index === activeTabIndex) {
+            panel.classList.add("active");
+            panel.style.display = "block";
+          } else {
+            panel.classList.remove("active");
+            panel.style.display = "none";
+          }
+        });
+      });
+    });
+  })();
 </script>
 
 <script type="text/javascript" id="code-annotation-fragments">

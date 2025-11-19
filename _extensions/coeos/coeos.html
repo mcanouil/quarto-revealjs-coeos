@@ -63,7 +63,7 @@
       return tabContent ? tabContent.children : [];
     }
 
-    Reveal.configure({ pdfSeparateFragments: false });
+    Reveal.configure({ pdfSeparateFragments: true });
 
     Reveal.on("ready", function () {
       const tabsetSlides = document.querySelectorAll(".reveal .slides section .panel-tabset");

@@ -19,3 +19,4 @@ contributes:
       logo: coeos.svg
       include-after-body:
         - file: coeos.html
+      pdf-separate-fragments: true

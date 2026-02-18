@@ -1,3 +1,6 @@
 # _schema.yml for "coeos" format extension
 # This extension provides a Reveal.js theme with no user-configurable options.
+
+$schema: https://m.canouil.dev/quarto-wizard/assets/schema/v1/extension-schema.json
+
 options: {}

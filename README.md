@@ -1,7 +1,7 @@
 # Quarto Reveal.js template - Coeos
 
 <!-- badges: start -->
-[![License](https://img.shields.io/github/license/mcanouil/quarto-revealjs-coeos@1.10.3)](LICENSE)
+[![License](https://img.shields.io/github/license/mcanouil/quarto-revealjs-coeos@1.11.0)](LICENSE)
 <!-- badges: end -->
 
 This is a repository for `Quarto` `revealjs` template.
@@ -15,13 +15,13 @@ This [Quarto](quarto.org) extension can be installed/used using the following co
 - Install
 
   ```bash
-  quarto add mcanouil/quarto-revealjs-coeos@1.10.3
+  quarto add mcanouil/quarto-revealjs-coeos@1.11.0
   quarto add mcanouil/quarto-iconify # Optional
   ```
 
 - Use
 
   ```bash
-  quarto use template mcanouil/quarto-revealjs-coeos@1.10.3
+  quarto use template mcanouil/quarto-revealjs-coeos@1.11.0
   quarto add mcanouil/quarto-iconify # Optional
   ```

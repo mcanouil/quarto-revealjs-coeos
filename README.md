@@ -1,7 +1,9 @@
 # Quarto Reveal.js template - Coeos
 
 <!-- badges: start -->
-[![License](https://img.shields.io/github/license/mcanouil/quarto-revealjs-coeos@1.11.0)](LICENSE)
+
+[![License](https://img.shields.io/github/license/mcanouil/quarto-revealjs-coeos)](LICENSE)
+
 <!-- badges: end -->
 
 This is a repository for `Quarto` `revealjs` template.

@@ -23,6 +23,7 @@ website:
   # with a leading-slash image path, without normalising.
   site-url: &site-url https://m.canouil.dev/quarto-revealjs-coeos
   repo-url: https://github.com/mcanouil/quarto-revealjs-coeos
+  repo-subdir: docs
   page-navigation: true
   # atelier defaults search to an overlay button in the navbar. With no navbar
   # the search belongs in the sidebar, as a field rather than a button.

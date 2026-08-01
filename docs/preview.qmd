@@ -24,11 +24,12 @@ summary(cars)
 
 ## A table
 
-| Column | Column |
+| Measurement | Result |
 | --- | --- |
-| A | B |
+| Absorbance | 0.42 |
+| Retention time | 3.1 min |
 
-: A table styled by the theme.
+: A table styled by the theme. {tbl-colwidths="[60,40]"}
 
 ## Incremental content
 
@@ -36,5 +37,29 @@ summary(cars)
 
 - Revealed in turn.
 - As usual.
+
+:::
+
+## Code annotations
+
+```r
+model <- lm(dist ~ speed, data = cars)   # <1>
+summary(model)                           # <2>
+```
+
+1. Fit the model.
+2. Read the fit back out.
+
+## A tabset
+
+::: {.panel-tabset}
+
+### First
+
+The theme steps a tabset through its tabs one fragment at a time.
+
+### Second
+
+Which is also what the PDF export follows.
 
 :::

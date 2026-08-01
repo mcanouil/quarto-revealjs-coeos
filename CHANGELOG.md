@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.11.1 (2026-08-01)
+
 ### Documentation
 
 - docs: Add a documentation website under `docs/`, built on the `atelier` project type and published to <https://m.canouil.dev/revealjs-coeos/>, including a deck built by the site itself.

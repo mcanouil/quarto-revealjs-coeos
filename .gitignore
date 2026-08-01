@@ -2,8 +2,11 @@
 /.luarc.json
 template_files/
 template.html
-index.qmd
-_quarto.yml
+# Anchored: the rendered template at the root only. Unanchored, these also
+# matched docs/index.qmd and docs/_quarto.yml, which the website needs.
+/index.qmd
+/_quarto.yml
 _site/
 _extensions/mcanouil/iconify/
 /.quarto/
+**/*.quarto_ipynb

@@ -1,0 +1,44 @@
+---
+title: "Reference"
+subtitle: "What the coeos theme styles."
+description: "The coeos format: the front matter it reads, what it styles, and the optional iconify dependency."
+---
+
+## Using the format
+
+```yaml
+format: coeos-revealjs
+```
+
+## Options
+
+This theme has no options of its own.
+Everything is styled from the front matter Quarto already defines, and from RevealJS's own options.
+
+## Front matter it reads
+
+| Key | Used for |
+| --- | --- |
+| `title`, `subtitle` | The title slide. |
+| `author`, `institute` | The title slide and the footer. |
+| `date` | The title slide, written out in full. |
+| `logo` | The corner of every slide. |
+| `footer` | The centre of the footer. |
+
+: Front matter the theme lays out. {.striped .hover tbl-colwidths="[30,70]"}
+
+Every RevealJS option works as usual: `slide-number`, `incremental`, `transition`, and the rest.
+
+## The optional icon dependency
+
+```bash
+quarto add mcanouil/quarto-iconify
+```
+
+[iconify](https://m.canouil.dev/quarto-iconify) is optional.
+Installing it lets the footer and slides carry icons from any Iconify set; without it, everything else works unchanged.
+
+## Limitations
+
+- RevealJS only.
+- The theme is a look rather than a mechanism: it adds no shortcodes, filters, or classes of its own.

@@ -1,0 +1,40 @@
+---
+title: "The coeos theme"
+subtitle: "A deck built by the documentation site"
+author: "Mickaël CANOUIL"
+institute: "An institute"
+date: last-modified
+format: coeos-revealjs
+---
+
+## A slide
+
+The theme styles the title slide, the headings, the footer, and the slide numbers.
+
+Everything on this deck is the theme; nothing here is marked up for it.
+
+## Lists and code
+
+- A list item.
+- Another one.
+
+```r
+summary(cars)
+```
+
+## A table
+
+| Column | Column |
+| --- | --- |
+| A | B |
+
+: A table styled by the theme.
+
+## Incremental content
+
+::: {.incremental}
+
+- Revealed in turn.
+- As usual.
+
+:::

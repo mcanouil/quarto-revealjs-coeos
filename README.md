@@ -12,18 +12,27 @@ This is a repository for `Quarto` `revealjs` template.
 
 ## Installation
 
-This [Quarto](quarto.org) extension can be installed/used using the following command:
+```bash
+quarto add mcanouil/revealjs-coeos@1.11.0
+quarto add mcanouil/quarto-iconify # Optional
+```
 
-- Install
+## Creating a New Presentation
 
-  ```bash
-  quarto add mcanouil/quarto-revealjs-coeos@1.11.0
-  quarto add mcanouil/quarto-iconify # Optional
-  ```
+```bash
+quarto use template mcanouil/revealjs-coeos@1.11.0
+quarto add mcanouil/quarto-iconify # Optional
+```
 
-- Use
+This will install the extension under the `_extensions` subdirectory.
+If you're using version control, you will want to check in this directory.
 
-  ```bash
-  quarto use template mcanouil/quarto-revealjs-coeos@1.11.0
-  quarto add mcanouil/quarto-iconify # Optional
-  ```
+## Documentation
+
+The full documentation lives at <https://m.canouil.dev/revealjs-coeos/>: the front matter the theme reads, what it styles, the optional iconify dependency, and a deck built by the site itself.
+
+[`template.qmd`](template.qmd) is a complete starting point you can copy.
+
+## Licence
+
+[MIT](https://github.com/mcanouil/revealjs-coeos?tab=MIT-1-ov-file#readme).

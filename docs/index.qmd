@@ -14,6 +14,8 @@ A conference deck spends most of its life on a projector in a bright room, where
 
 [See a deck built by this site](preview.html).
 
+![](preview.html){.embed-art loading="lazy" title="A deck in the coeos theme" style="--atelier-embed-art-ratio: 1.78;"}
+
 ## Starting a presentation
 
 ```bash

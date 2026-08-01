@@ -1,0 +1,65 @@
+---
+title: "The coeos theme"
+subtitle: "A deck built by the documentation site"
+author: "Mickaël CANOUIL"
+institute: "An institute"
+date: last-modified
+format: coeos-revealjs
+---
+
+## A slide
+
+The theme styles the title slide, the headings, the footer, and the slide numbers.
+
+Everything on this deck is the theme; nothing here is marked up for it.
+
+## Lists and code
+
+- A list item.
+- Another one.
+
+```r
+summary(cars)
+```
+
+## A table
+
+| Measurement | Result |
+| --- | --- |
+| Absorbance | 0.42 |
+| Retention time | 3.1 min |
+
+: A table styled by the theme. {tbl-colwidths="[60,40]"}
+
+## Incremental content
+
+::: {.incremental}
+
+- Revealed in turn.
+- As usual.
+
+:::
+
+## Code annotations
+
+```r
+model <- lm(dist ~ speed, data = cars)   # <1>
+summary(model)                           # <2>
+```
+
+1. Fit the model.
+2. Read the fit back out.
+
+## A tabset
+
+::: {.panel-tabset}
+
+### First
+
+The theme steps a tabset through its tabs one fragment at a time.
+
+### Second
+
+Which is also what the PDF export follows.
+
+:::

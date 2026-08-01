@@ -1,0 +1,70 @@
+---
+title: "RevealJS Coeos"
+subtitle: "A dark, restrained theme for talks."
+description: "What the coeos theme gives a Quarto presentation, how to start from it, and where to see one."
+authors:
+  - name: "Mickaël CANOUIL, _Ph.D._"
+    orcid: "0000-0002-3396-4549"
+    url: "https://mickael.canouil.fr"
+---
+
+A conference deck spends most of its life on a projector in a bright room, where a busy theme is a liability.
+
+`coeos` is dark and restrained: a full title slide, a logo in the corner, a footer carrying the author and licence, and slide numbers, with nothing else competing for attention.
+
+[See a deck built by this site](preview.html).
+
+![](preview.html){.embed-art loading="lazy" title="A deck in the coeos theme" style="--atelier-embed-art-ratio: 1.78;"}
+
+## Starting a presentation
+
+```bash
+quarto use template {{< var extension.reference >}}
+```
+
+::: {.btn-group role="group" aria-label="Quarto Wizard installer options"}
+
+[Visual Studio Code](vscode://mcanouil.quarto-wizard/use?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Use {{< var extension.reference >}} in Visual Studio Code using the Quarto Wizard extension."}
+[Positron](positron://mcanouil.quarto-wizard/use?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Use {{< var extension.reference >}} in Positron using the Quarto Wizard extension."}
+[VSCodium](vscodium://mcanouil.quarto-wizard/use?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Use {{< var extension.reference >}} in VSCodium using the Quarto Wizard extension."}
+
+:::
+
+## Adding it to a presentation you already have
+
+```bash
+quarto add {{< var extension.reference >}}
+```
+
+This will install the extension under the `_extensions` subdirectory.
+If you are using version control, you will want to check in this directory.
+
+::: {.btn-group role="group" aria-label="Quarto Wizard installer options"}
+
+[Visual Studio Code](vscode://mcanouil.quarto-wizard/install?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Install {{< var extension.reference >}} in Visual Studio Code using the Quarto Wizard extension."}
+[Positron](positron://mcanouil.quarto-wizard/install?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Install {{< var extension.reference >}} in Positron using the Quarto Wizard extension."}
+[VSCodium](vscodium://mcanouil.quarto-wizard/install?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Install {{< var extension.reference >}} in VSCodium using the Quarto Wizard extension."}
+
+:::
+
+## Quick start
+
+```yaml
+format: coeos-revealjs
+```
+
+The theme takes the title, subtitle, author, institute, and date from the front matter and lays out the title slide from them.
+
+See the [Reference](reference.qmd) for what it styles, and the [Examples](examples.qmd) for the source behind the deck.
+
+## Where it works
+
+RevealJS.
+
+## Links
+
+- [Reference](reference.qmd) for what the theme styles.
+- [Examples](examples.qmd) for the source behind the deck.
+- [Preview deck](preview.html) to look at.
+- [Changelog](changelog.qmd) for what each release changed.
+- [Source and issues](https://github.com/mcanouil/quarto-revealjs-coeos) on GitHub.

@@ -1,0 +1,81 @@
+---
+title: "Reference"
+subtitle: "What the coeos theme styles."
+description: "The coeos format: the front matter it reads, what it styles, and the optional iconify dependency."
+---
+
+## Using the format
+
+```yaml
+format: coeos-revealjs
+```
+
+## Options
+
+This theme has no options of its own.
+Everything is styled from the front matter Quarto already defines, and from RevealJS's own options.
+
+## Front matter it reads
+
+| Key | Used for |
+| --- | --- |
+| `title`, `subtitle` | The title slide. |
+| `author`, `institute` | The title slide. |
+| `date` | The title slide, written out in full. |
+| `logo` | The top right corner of every slide after the title slide. |
+| `footer` | The centre of the footer. |
+
+: Front matter the theme lays out. {.striped .hover tbl-colwidths="[30,70]"}
+
+Every RevealJS option works as usual: `slide-number`, `incremental`, `transition`, and the rest.
+
+## The defaults it sets
+
+The format arrives with these already set, and each is an ordinary RevealJS or Quarto key you can override in your own front matter.
+
+| Key | Value |
+| --- | --- |
+| `theme` | `coeos.scss` |
+| `syntax-highlighting` | `github-dark` |
+| `mermaid.theme` | `dark` |
+| `date-format` | `dddd[, the] Do [of] MMMM, YYYY` |
+| `slide-number` | `c` |
+| `code-annotations` | `select` |
+| `logo` | `coeos.svg` |
+| `footer` | A link to the theme author's site and to the CC BY-SA 4.0 licence. |
+| `pdf-separate-fragments` | `true` |
+
+: What the format sets before your front matter is read. {.striped .hover tbl-colwidths="[32,68]"}
+
+::: {.callout-note}
+The default footer names the theme author and the theme's own licence, not yours.
+Set `footer` in your front matter to replace it.
+:::
+
+## What it changes on the page
+
+Alongside the stylesheet the format includes a script that adds five behaviours.
+
+| Behaviour | Effect |
+| --- | --- |
+| Ordinal dates | Superscripts the `st`, `nd`, `rd` and `th` of a written-out date. |
+| Title slide chrome | Hides the logo and the menu button while the title slide is showing. |
+| Tabsets as fragments | Steps a `.panel-tabset` through its tabs one fragment at a time, and opens the reached tab when exporting to PDF. |
+| Code annotations | Reveals the annotation tooltip as the fragment that highlights its line arrives. |
+| Favicon | Sets the page favicon from the slide logo. |
+
+: The behaviours the included script adds. {.striped .hover tbl-colwidths="[26,74]"}
+
+## The optional icon dependency
+
+```bash
+quarto add mcanouil/quarto-iconify
+```
+
+[iconify](https://m.canouil.dev/quarto-iconify) is optional.
+Installing it lets the footer and slides carry icons from any Iconify set; without it, everything else works unchanged.
+
+## Limitations
+
+- RevealJS only.
+- There is nothing to mark up: the theme adds no shortcodes, filters, or classes of its own, and the behaviours above apply themselves to what a deck already contains.

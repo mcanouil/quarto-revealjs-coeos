@@ -1,0 +1,95 @@
+---
+title: "Examples"
+subtitle: "The source behind the deck."
+description: "The front matter and slides that produce the coeos deck built by this site."
+---
+
+The [preview deck](preview.html) is built by this site.
+This page is the source behind it.
+
+## The front matter
+
+```yaml
+---
+title: "The coeos theme"
+subtitle: "A deck built by the documentation site"
+author: "Mickaël CANOUIL"
+institute: "An institute"
+date: last-modified
+format: coeos-revealjs
+---
+```
+
+The title slide is laid out from those keys alone.
+
+## A logo and a footer
+
+```yaml
+format:
+  coeos-revealjs:
+    logo: logo.svg
+    footer: "An event, somewhere"
+    slide-number: true
+```
+
+Both are RevealJS options; the theme styles where they land.
+
+## Ordinary slides
+
+```markdown
+## A slide
+
+- A list item.
+- Another one.
+
+\`\`\`r
+summary(cars)
+\`\`\`
+```
+
+Nothing on a slide is marked up for the theme: headings, lists, code, and tables are styled as they come.
+
+## Incremental content
+
+```markdown
+::: {.incremental}
+
+- Revealed in turn.
+- As usual.
+
+:::
+```
+
+RevealJS fragments and incremental lists behave as they do in any deck.
+
+## Stepping through a tabset
+
+```markdown
+::: {.panel-tabset}
+
+### First
+
+### Second
+
+:::
+```
+
+The theme turns each tab after the first into a fragment, so a tabset advances one tab per keypress rather than needing a click, and the PDF export keeps the tab each step reached.
+
+## Annotating code
+
+````markdown
+```r
+model <- lm(dist ~ speed, data = cars)   # <1>
+summary(model)                           # <2>
+```
+
+1. Fit the model.
+2. Read the fit back out.
+````
+
+The format sets `code-annotations: select`, and the theme opens each annotation as the fragment highlighting its line arrives.
+
+## Source
+
+The repository ships a complete starting point you can copy: [`template.qmd`](https://github.com/mcanouil/quarto-revealjs-coeos/blob/main/template.qmd).

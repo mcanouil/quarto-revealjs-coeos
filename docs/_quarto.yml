@@ -20,9 +20,15 @@ website:
   title: "RevealJS Coeos"
   description: "A dark, restrained RevealJS theme for Quarto, with a logo, a footer, and a full title slide."
   # No trailing slash: Quarto builds the social image URL by concatenating this
-  # with a leading-slash image path, without normalising.
+  # with the image path, without normalising.
   site-url: &site-url https://m.canouil.dev/quarto-revealjs-coeos
   repo-url: https://github.com/mcanouil/quarto-revealjs-coeos
+  open-graph:
+    image: assets/social/og-image.png
+    image-alt: "The quarto-revealjs-coeos social card: the extension name and the \"format\" badge over the line \"A sleek dark theme for Reveal.js presentations\", beside a dark code window showing slides.qmd."
+  twitter-card:
+    image: assets/social/og-image.png
+    image-alt: "The quarto-revealjs-coeos social card: the extension name and the \"format\" badge over the line \"A sleek dark theme for Reveal.js presentations\", beside a dark code window showing slides.qmd."
   repo-subdir: docs
   page-navigation: true
   # atelier defaults search to an overlay button in the navbar. With no navbar

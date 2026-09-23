@@ -36,16 +36,16 @@ Both are RevealJS options; the theme styles where they land.
 
 ## Ordinary slides
 
-```markdown
+````markdown
 ## A slide
 
 - A list item.
 - Another one.
 
-\`\`\`r
+```r
 summary(cars)
-\`\`\`
 ```
+````
 
 Nothing on a slide is marked up for the theme: headings, lists, code, and tables are styled as they come.
 

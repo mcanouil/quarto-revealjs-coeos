@@ -13,14 +13,14 @@ This is a repository for `Quarto` `revealjs` template.
 ## Installation
 
 ```bash
-quarto add mcanouil/revealjs-coeos@1.11.0
+quarto add mcanouil/quarto-revealjs-coeos@1.11.4
 quarto add mcanouil/quarto-iconify # Optional
 ```
 
 ## Creating a New Presentation
 
 ```bash
-quarto use template mcanouil/revealjs-coeos@1.11.0
+quarto use template mcanouil/quarto-revealjs-coeos@1.11.4
 quarto add mcanouil/quarto-iconify # Optional
 ```
 
@@ -35,4 +35,4 @@ The full documentation lives at <https://m.canouil.dev/revealjs-coeos/>: the fro
 
 ## Licence
 
-[MIT](https://github.com/mcanouil/revealjs-coeos?tab=MIT-1-ov-file#readme).
+[MIT](https://github.com/mcanouil/quarto-revealjs-coeos?tab=MIT-1-ov-file#readme).

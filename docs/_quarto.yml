@@ -21,6 +21,8 @@ website:
   description: "A dark, restrained RevealJS theme for Quarto, with a logo, a footer, and a full title slide."
   # No trailing slash: Quarto builds the social image URL by concatenating this
   # with the image path, without normalising.
+  # quarto-dev/quarto-cli#15053 normalises this join. Drop this note once the
+  # minimum Quarto version is the first release after 1.11.6.
   site-url: &site-url https://m.canouil.dev/quarto-revealjs-coeos
   repo-url: https://github.com/mcanouil/quarto-revealjs-coeos
   open-graph:

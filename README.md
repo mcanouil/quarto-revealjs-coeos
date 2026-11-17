@@ -13,14 +13,14 @@ This is a repository for `Quarto` `revealjs` template.
 ## Installation
 
 ```bash
-quarto add mcanouil/quarto-revealjs-coeos@1.11.4
+quarto add mcanouil/quarto-revealjs-coeos@1.11.5
 quarto add mcanouil/quarto-iconify # Optional
 ```
 
 ## Creating a New Presentation
 
 ```bash
-quarto use template mcanouil/quarto-revealjs-coeos@1.11.4
+quarto use template mcanouil/quarto-revealjs-coeos@1.11.5
 quarto add mcanouil/quarto-iconify # Optional
 ```
 

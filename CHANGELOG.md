@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.11.5 (2026-11-17)
+
 - build: Require Quarto 1.11.9 or later.
 
 ## 1.11.4 (2026-09-23)

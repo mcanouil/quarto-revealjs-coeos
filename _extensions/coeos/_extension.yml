@@ -1,6 +1,6 @@
 title: Coeos Presentation Template
 author: Mickaël CANOUIL
-version: 1.11.4
+version: 1.11.5
 quarto-required: ">=1.11.9"
 contributes:
   formats:
